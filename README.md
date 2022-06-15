@@ -7,4 +7,4 @@ chmod 775 ngrokWizard.sh
 ./ngrokWizard.sh
 ```
 
-Once configured the client using the wizard, you can directly run ngrokStart and ngrokStop to start and stop the ngrok client
+Once configured the client using the wizard, you can directly run ngrokStart.sh and ngrokStop.sh to start and stop the ngrok client
