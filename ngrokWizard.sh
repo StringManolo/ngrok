@@ -10,6 +10,14 @@ if [ ! -d ~/.ssh ]; then
   mkdir ~/.ssh
 fi
 
+# Check if fingerprint exists, if not add it (used to avoid manual fp confirmation)
+HOSTNAME="tunnel.us.ngrok.com"
+FINGERPRINT=$(ssh-keygen -F $HOSTNAME)
+if [ -z "$FINGERPRINT" ]; then
+    ssh-keyscan -H $HOSTNAME >> ~/.ssh/known_hosts
+fi
+
+
 if [ -f /root/.ssh/id_ecdsa ]; then
   rm /root/.ssh/id_ecdsa;
 fi
